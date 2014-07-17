@@ -28,7 +28,6 @@ var CommentList = React.createClass({
                     </table>
                   <a href={'/comments/new'}>New comment</a> 
                 </div>
-
                 )
              }
 });
@@ -54,12 +53,12 @@ var CommentList = React.createClass({
                             <td>{this.props.data.text}</td>
                             <td><a href={'/comments/'+this.props.data.id}>Show</a>&nbsp;
                                 <a href={'/comments/'+this.props.data.id+'/edit'}>Edit</a>&nbsp;                             
-                                <a href={'/comments/'+this.props.data.id} method="data-delete">Delete</a>
+                                <button onClick={this.destroy}>Delete</button> 
                                 </td>
                         </tr>
                     )    
-            }
+            } // 
          
       });
 
- // <button onClick={this.destroy} method={data-delete}>Delete</button>
+ 

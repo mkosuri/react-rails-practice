@@ -1,7 +1,6 @@
-<%= react_component('Comment', 
-                    {:presenter => @presenter.to_json}, 
-                    {:prerender => true}) %>
 
+<%= react_component('Comment', 
+                    {:presenter => @presenter.to_json})%>
 
 <%#= react_component('CommentList', 
                     {:presenter => @presenter.to_json, :imgSrc => image_path("gundam.jpg")}, 

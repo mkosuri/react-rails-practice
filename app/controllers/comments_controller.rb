@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
                 :csrf_param => request_forgery_protection_token,
                 :csrf_token => form_authenticity_token
             }
-         }
+      }
   end
 
   def update
@@ -47,11 +47,26 @@ class CommentsController < ApplicationController
       @comment.author = params[:author]
       @comment.text = params[:text]
       @comment.save
+
+   render js: "window.location.pathname='#{comments_path}'"
+
+    # ----------  
       # redirect_to comments_path, format: 'js'
-      render :text => "update"
-         
+      # render :text => "update"
+  # ------
+      # def redirect_to(options = {}, response_status = {})
+      #   if request.xhr?
+      #    render(:update) {|page| page.redirect_to(:controller => 'comments', :action => 'index')}
+      #   else
+      #    super(options, response_status)
+      #   end
+      # end
+# -------
+  # render :json => {
+  #         :location => url_for(:controller => 'comments', :action => 'index'),
+  #       }  
       
-  end
+   end
 
   def destroy
     Comment.destroy(params[:id])

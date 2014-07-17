@@ -14,7 +14,8 @@ var EditComment = React.createClass({
       url: 'http://localhost:3000/comments/'+this.state.comment.id,
       data: {id: id,author: author,text: text,csrf_token:this.state.form.csrf_param},
         success: function(){
-          window.location.href='http://localhost:3000/comments';
+           // window.location.href='http://localhost:3000/comments';
+         // alert("success");
         }
     });
   },
